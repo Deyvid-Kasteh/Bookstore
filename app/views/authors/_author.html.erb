@@ -1,26 +1,24 @@
-<div id="<%= dom_id author %>">
-  <p>
-    <strong>Name:</strong>
-    <%= author.name %>
-  </p>
+<div id="<%= dom_id author %>" class="col" >
+  <div class="card mb-4 rounded-3 shadow-sm">
+    <div class="card-header py-3">
+      <h2 class="my-0 fw-normal">
+        <strong><%= author.name %></strong>
+      </h2>
+    </div>
+    <div class="card-body">
+    
+      <h3 class="card-title pricing-card-title">Gender: <small class="text-muted fw-light"><%= author.gender %></small></h3>
 
-  <p>
-    <strong>Gender:</strong>
-    <%= author.gender %>
-  </p>
+      <h3 class="card-title pricing-card-title">Age: <small class="text-muted fw-light"><%= author.age %></small></h3>
 
-  <p>
-    <strong>Age:</strong>
-    <%= author.age %>
-  </p>
+      <h3 class="card-title pricing-card-title">Books: </h3>
 
-  <p>
-    <strong>Books:</strong>
-    <ul>
-      <% author.books.each do |book| %>
-        <li><%= book.title%></li>
-      <% end %>
-    </ul>
-  </p>
-
+      <ul class="list-unstyled mt-3 mb-4">
+        <% author.books.each do |book| %>
+          <li><i class="bi bi-book"></i><%= link_to book.title, book, class:"w-100 btn btn-lg btn-outline-info" %></li>
+        <% end %>      
+      </ul>
+    </div>
+  </div>
 </div>
+
