@@ -3,13 +3,28 @@
 <h1>Authors</h1>
 
 <div id="authors">
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
   <% @authors.each do |author| %>
-    <%= render author %>
-    <p>
-      <%= link_to "Show this author", author %>
-    </p>
+    <div>
+      <%= render author %>
+      <p>
+        <%= link_to "Show this author", author %>
+      </p>
+    </div>
   <% end %>
 </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
 
 <%= link_to "New author", new_author_path %><br><br><br>
 <%= link_to "Books page", books_path %>
