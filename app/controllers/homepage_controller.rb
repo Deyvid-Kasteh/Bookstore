@@ -1,18 +1,14 @@
 class HomepageController < ApplicationController
-  before_action :set_busca, only: :search
   def index
   end
 
   def search
+    response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+ params[:busca])
 
-    bbusca = @busca_de_livros.general
-    puts @texto
-  end
+    puts response.body, response.code, response.message, response.headers.inspect
 
-  private
-  def set_busca
-    @texto = params[:busca]
-    @busca_de_livros = Buscalivros.new(@texto)
-    
+    @livro = response.body
+
+
   end
 end
