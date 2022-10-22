@@ -15,7 +15,7 @@
 
       <ul class="list-unstyled mt-3 mb-4">
         <% author.books.each do |book| %>
-          <li><i class="bi bi-book"></i><%= link_to book.title, book, class:"w-100 btn btn-lg btn-outline-info" %></li>
+          <li class="card-title"><%= link_to book.title, book, class:"w-100 btn btn-lg btn-outline-info" %></li>
         <% end %>      
       </ul>
     </div>

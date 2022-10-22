@@ -1,5 +1,23 @@
 <h1>Homepage#index</h1>
 <p>Find me in app/views/homepage/index.html.erb</p>
 
+
+
+
+<%= form_with url:homepage_search_path, local:true, method: :post do %>
+<div>
+    <%= label_tag "busca" %>
+    <%= text_field_tag "busca"  %>
+    <%= submit_tag "enviarBusca"%>
+
+
+</div>
+
+
+<% end %>
+
+
+
+
 <p>  <%= link_to "Books", books_path %></p>
 <p><%= link_to "AUTHORs page", authors_path %></p>
