@@ -5,15 +5,24 @@ class HomepageController < ApplicationController
   end
 
   def search
-    response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+ params[:busca])
+    @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+ params[:busca])
     #JSON.parse response, symbolize_names: true
-    #puts response.body, response.code, response.message, response.headers.inspect
+    #puts response.body, response.code, response.message, 
 
-    @livro = JSON.parse(response.body)
-    @livroAzkaban = @livro['items']
-    puts @livroAzkaban
+    puts "111111111111111111111111"
+    #puts response.headers.inspect
+    puts "222222222222222222222222"
 
-    @livroAzkaban
+    #@livro = JSON.parse(response.body)
+    @livroAzkaban = JSON.parse(@response.body)
+    #puts @livroAzkaban
+    puts "333333333333333333333333333333"
+    #@livroAzkaban
+
+    #render plain: params[@livroAzkaban]
+
+
+    @deyvid = "kasteh"
     
     
 
