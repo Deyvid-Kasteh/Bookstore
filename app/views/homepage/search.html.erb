@@ -1,13 +1,50 @@
+<div class="container">
+
+
+
 <h1>Homepage#search</h1>
 <p>Find me in app/views/homepage/search.html.erb</p>
 
-<% @livroAzkaban['items'].each do |volume| %>
 
-<p><%= volume['volumeInfo']['title']%></p>
+<div class="row row-cols-1 row-cols-md-3 mb-3">
+    <% @livroAzkaban['items'].each do |volume| %>
+
+        <div class="col" >
+            <div class="card mb-4 rounded-3 shadow-sm">
+
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">
+                        <strong><%= volume['volumeInfo']['title']%></strong>
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <% if volume['volumeInfo']['imageLinks'].blank? %>
+                        <h5 class="card-title pricing-card-title">Não tem imagem</h5>
+                    <% else %>
+
+                    <%= image_tag volume['volumeInfo']['imageLinks']['thumbnail'], height: 400, class: 'img-thumbnail' %>
+                    <% end %>
+                </div>
 
 
 
+
+            </div>
+        </div>
+
+
+    <% end %>
+</div>
 
 <p><%= @deyvid%><p>
 
-<% end %>
+
+
+
+
+
+<p>  <%= link_to "Books", books_path %></p>
+<p><%= link_to "AUTHORs page", authors_path %></p>
+
+
+</div>
