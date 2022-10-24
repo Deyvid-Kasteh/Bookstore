@@ -1,7 +1,13 @@
 <h1>Homepage#search</h1>
 <p>Find me in app/views/homepage/search.html.erb</p>
 
-<%= @livroshpazkaban.class%>
-<p>Livro</p>
+<% @livroAzkaban['items'].each do |volume| %>
 
-<p>oi<p>
+<p><%= volume['volumeInfo']['title']%></p>
+
+
+
+
+<p><%= @deyvid%><p>
+
+<% end %>
