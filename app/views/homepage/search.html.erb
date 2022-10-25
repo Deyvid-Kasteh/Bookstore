@@ -22,7 +22,7 @@
                         <h5 class="card-title pricing-card-title">Não tem imagem</h5>
                     <% else %>
 
-                    <%= image_tag volume['volumeInfo']['imageLinks']['thumbnail'], height: 400, class: 'img-thumbnail' %>
+                    <%= image_tag volume['volumeInfo']['imageLinks']['thumbnail'], height: 400 %>
                     <% end %>
                 </div>
 
@@ -45,6 +45,7 @@
 
 <p>  <%= link_to "Books", books_path %></p>
 <p><%= link_to "AUTHORs page", authors_path %></p>
+<p><%= link_to "Home page", root_path %></p>
 
 
 </div>
