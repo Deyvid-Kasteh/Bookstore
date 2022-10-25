@@ -8,8 +8,8 @@
 <div class="divbusca">
 <%= form_with url:homepage_search_path, local:true, method: :get do %>
 <div>
-    <%= text_field_tag "busca", nil, placeholder: 'Buscar livro', class: 'buscarLivro'  %>
-    <%= submit_tag "enviarBusca"%>
+    <%= text_field_tag "busca", nil, placeholder: 'Digite o título do livro', class: 'buscarLivro'  %>
+    <%= submit_tag "enviarBusca", class: 'buscarLivroBtn'%>
 </div>
 <% end %>
 </div>
