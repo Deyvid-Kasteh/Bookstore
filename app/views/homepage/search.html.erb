@@ -1,13 +1,20 @@
 <div class="searchPage">
     <div class="searchPageNavBar">
-        <p><%= link_to "AUTHORs page", authors_path %></p>
+    <h1>Biblioteca.</h1>
+    <nav>
+    <ul>
+    <li><%= link_to "Books", books_path %></li>
+    <li><%= link_to "AUTHORs page", authors_path %></li>
+    <li><%= link_to "Home page", root_path %></li>
+    </ul>
+    </nav>
     </div>
 
     <div class="searchPageBody">
         <% @livroAzkaban['items'].each do |volume| %>
             <% if volume['volumeInfo'].include?('imageLinks') %>
                 <div>
-                    <%= image_tag volume['volumeInfo']['imageLinks']['thumbnail'], class: "" %>
+                    <%= image_tag volume['volumeInfo']['imageLinks']['thumbnail'], class: "searchPageBodyImage" %>
                 </div>
             <% end %> 
         <% end %>

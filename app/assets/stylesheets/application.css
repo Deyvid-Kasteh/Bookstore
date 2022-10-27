@@ -38,7 +38,7 @@ html, body {
 .containerBody {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.2)), url(bibli.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url(bibli.jpg);
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -67,7 +67,7 @@ html, body {
 }
 
 .buscarLivro {
-  width: 600px;
+  width: 500px;
   height: 60px;
   border-radius: 30px;
   border: none;
@@ -75,6 +75,7 @@ html, body {
   outline: none;
   font-size: 20px;
   text-align: center;
+  color: black;
 }
 
 .buscarLivro::placeholder {
@@ -82,12 +83,14 @@ html, body {
 }
 
 .buscarLivroBtn {
-  width: 100px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 30px;
   border: none;
   border-style: none;
   outline: none;
+  color: black;
+  font-weight: 600;
 }
 
 
@@ -101,19 +104,59 @@ html, body {
 
 .searchPageNavBar {
   display: flex;
-  height: 15%;
+  height: 12%;
+  align-items: center;
+}
+
+.searchPageNavBar h1{
+  margin-left: 30px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 60px;
+}
+
+nav ul li a {
+text-decoration: none;
+color: white;
 }
 
 
 
 .searchPageBody {
   display: flex;
-  height: 75%;
+  height: 80%;
+  flex-wrap: wrap;
+  padding-left: 80px;
+  padding-right: 80px;
+  overflow-y: scroll;
+  
 }
+
+
+.searchPageBody::-webkit-scrollbar {
+  display: none;
+}
+
+.searchPageBodyImage {
+  height: 300px;
+  margin: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.searchPageBodyImage:hover {
+  transform: scale(1.3);
+}
+
+
 
 .searchPageFoot {
   display: flex;
-  height: 15%;
+  height: 10%;
 }
 
 
