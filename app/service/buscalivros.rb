@@ -1,12 +1,12 @@
-class Buscalivros
-      include HTTParty
-      base_uri "https://www.googleapis.com/books/v1/volumes?"
+class Googles
+    include HTTParty
+    base_uri 'https://www.googleapis.com/books/v1/volumes?'
 
-      def initialize(btexto)
-        @options = { query: btexto }
-      end
+    def initialize (nomeDoElemento, numeroDaPagina, numeroDeElementos)
+      @options = { query: { q: nomeDoElemento, startIndex: numeroDaPagina, maxResults: numeroDeElementos} }
+    end
 
-      def general
-        self.class.get("q=", btexto)        
-      end
-end
+    def inicio
+      self.class.get('/', @options)
+    end
+  end

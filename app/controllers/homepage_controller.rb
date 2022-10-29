@@ -1,31 +1,20 @@
 class HomepageController < ApplicationController
+  require_relative '../service/buscalivros'
+
   def index
-    
-    
   end
 
   def search
-    @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+ params[:busca])
-    #JSON.parse response, symbolize_names: true
-    #puts response.body, response.code, response.message, 
-
-    puts "111111111111111111111111"
-    #puts response.headers.inspect
-    puts "222222222222222222222222"
-
-    #@livro = JSON.parse(response.body)
-    @livroAzkaban = JSON.parse(@response.body)
-    #puts @livroAzkaban
-    puts "333333333333333333333333333333"
-    #@livroAzkaban
-
-    #render plain: params[@livroAzkaban]
-
-
-    @deyvid = "kasteh"
-    
-    
-
+    @nomeDoElemento = params[:busca]
+    @numeroDaPagina = 0
+    @numeroDeElementos = 40
+    @response = Googles.new(@nomeDoElemento, @numeroDaPagina, @numeroDeElementos)
+    puts @response
+    @response2 = @response.inicio
+    puts @response2
+    @livroAzkaban = JSON.parse(@response2.body)
   end
 
+
+    
 end

@@ -1,7 +1,13 @@
-<h1>Homepage#search</h1>
-<p>Find me in app/views/homepage/search.html.erb</p>
+def search
+    @page = 0
+    @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+ params[:busca] + '&maxResults=40')
+    #JSON.parse response, symbolize_names: true
+    #puts response.body, response.code, response.message, 
 
-<%= render @livroshpazkaban %>
-<p>Livro</p>
+    @livroAzkaban = JSON.parse(@response.body)
 
-<p>oi<p>
+    @deyvid = "kasteh"
+    
+    
+
+end
