@@ -1,11 +1,10 @@
 <div class="searchPage">
     <div class="searchPageNavBar">
-    <h1>Biblioteca.</h1>
+    <p><%= link_to "Biblioteca.", root_path %></p>
     <nav>
     <ul>
     <li><%= link_to "Books", books_path %></li>
     <li><%= link_to "AUTHORs page", authors_path %></li>
-    <li><%= link_to "Home page", root_path %></li>
     </ul>
     </nav>
     </div>
@@ -13,8 +12,13 @@
     <div class="searchPageBody">
         <% @livroAzkaban['items'].each do |volume| %>
             <% if volume['volumeInfo'].include?('imageLinks') %>
+                <%@titulo = volume['volumeInfo']['title']%>
+                
                 <div>
                     <%= image_tag volume['volumeInfo']['imageLinks']['thumbnail'], class: "searchPageBodyImage" %>
+                    <div class="volumeDetalhes">
+                        <p><%= @titulo%></p>
+                    </div>
                 </div>
             <% end %> 
         <% end %>
